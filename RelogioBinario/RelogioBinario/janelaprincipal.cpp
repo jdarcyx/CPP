@@ -101,4 +101,5 @@ void JanelaPrincipal::on_btnsobre_clicked()
 {
     Sobre *s = new Sobre();
     s->exec();
+    delete s;
 }
