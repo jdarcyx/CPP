@@ -35,7 +35,7 @@ int* JanelaPrincipal::pegarBits ()
     *(bits+1) = this->horario_local->tm_min;
 
     *(bits+2) = this->horario_local->tm_mday;
-    *(bits+3) = this->horario_local->tm_mon;
+    *(bits+3) = ++this->horario_local->tm_mon;
 
     return bits;
 }
@@ -64,7 +64,6 @@ void JanelaPrincipal::ligarBits()
         (*bits & 4)?this->acender(this->ui->edt_h_4):this->apagar(this->ui->edt_h_4);
         (*bits & 8)?this->acender(this->ui->edt_h_8):this->apagar(this->ui->edt_h_8);
         (*bits & 16)?this->acender(this->ui->edt_h_16):this->apagar(this->ui->edt_h_16);
-        (*bits & 32)?this->acender(this->ui->edt_h_32):this->apagar(this->ui->edt_h_32);
 
         // MÊS
         (*(bits+1) & 1)?this->acender(this->ui->edt_m_1):this->apagar(this->ui->edt_m_1);
@@ -82,7 +81,6 @@ void JanelaPrincipal::ligarBits()
         (*(bits+2) & 4)?this->acender(this->ui->edt_h_4):this->apagar(this->ui->edt_h_4);
         (*(bits+2) & 8)?this->acender(this->ui->edt_h_8):this->apagar(this->ui->edt_h_8);
         (*(bits+2) & 16)?this->acender(this->ui->edt_h_16):this->apagar(this->ui->edt_h_16);
-        (*(bits+2) & 32)?this->acender(this->ui->edt_h_32):this->apagar(this->ui->edt_h_32);
 
         // MINUTO
         (*(bits+3) & 1)?this->acender(this->ui->edt_m_1):this->apagar(this->ui->edt_m_1);
